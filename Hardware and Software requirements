@@ -1,0 +1,11 @@
+## ⚙️ Hardware Requirements
+| Component           |                      Description |
+|---------------------|----------------------------------|
+| Arduino Uno         | Main microcontroller             |
+| Potentiometers (x2) | Volume and brightness control    |
+| Joystick module     | Mouse movement and click         |
+| SG90 Servo Motor    | RAM usage indicator              |
+| LEDs (x4)           | CPU temperature indicator        |
+| Jumper wires        | Connections                      |
+| Breadboard          | Circuit setup                    |
+
