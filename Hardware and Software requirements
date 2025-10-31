@@ -9,3 +9,18 @@
 | Jumper wires        | Connections                      |
 | Breadboard          | Circuit setup                    |
 
+## Software Requirements
+ 1. Operating System
+    Ubuntu Linux (Recommended version: 22.04 LTS or newer)
+  – Stable, long-term supported, and offers built-in serial access for Arduino.
+  – Any Debian-based distro (Pop!_OS, Mint) will also work.
+
+ 2. Firmware Development Environment Environment
+    | Software                                      | Purpose                                   | Notes                                 |
+    | --------------------------------------------- | ----------------------------------------- | ------------------------------------- |
+    | **Arduino IDE (v2.3.2 or newer)**             | To write and upload Arduino code to Uno   | Already compatible with Uno Rev3      |
+    | **Arduino CLI (optional)**                    | Command-line upload from Linux terminal   | Useful for automation or scripting    |
+    | **Python (v3.10 or newer)**                   | For Linux-side communication with Arduino | Standard in Ubuntu 22.04+             |
+    | **pySerial library (`pip install pyserial`)** | Serial communication between Arduino & PC | Key component for Ubuntu-Arduino link |
+
+    
