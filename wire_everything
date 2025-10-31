@@ -1,0 +1,30 @@
+Wiring Potentiometers: 
+  | Potentiometer          | Middle Pin      | Side 1 | Side 2 |
+  | -----------------------| --------------- | ------ | ------ |
+  | Pot1 for Volume        | A0  on arduino  | 5V     | GND    |
+  | Pot2 for Brightness    | A1  on arduino  | 5V     | GND    |
+
+Wiring Joystick Module:
+  | Joystick Pin | Arduino Pin | Function     |
+  | ------------ | ----------- | ------------ |
+  | VRx          | A2          | Mouse X-axis |
+  | VRy          | A3          | Mouse Y-axis |
+  | SW           | D2          | Mouse Click  |
+  | +5V          | 5V          | Power        |
+  | GND          | GND         | Ground       |
+
+Wiring Servo Motor (Servo Motor will show ram usage in real time):
+  | Servo Wire | Arduino Pin |
+  | ---------- | ----------- |
+  | Signal     | D9          |
+  | Vcc        | 5V          |
+  | GND        | GND         |
+
+Wiring LEDs: (It is recommended to use 4 different coloured LEDs):
+  | LED   | Arduino Pin | Represents CPU Temp |
+  | ----- | ----------- | ------------------- |
+  | LED 1 | D3          | < 45°C              |
+  | LED 2 | D4          | 45–60°C             |
+  | LED 3 | D5          | 60–75°C             |
+  | LED 4 | D6          | > 75°C              |
+NOTE: use approx 220 ohm resistor for each leds.
