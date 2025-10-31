@@ -23,4 +23,14 @@
     | **Python (v3.10 or newer)**                   | For Linux-side communication with Arduino | Standard in Ubuntu 22.04+             |
     | **pySerial library (`pip install pyserial`)** | Serial communication between Arduino & PC | Key component for Ubuntu-Arduino link |
 
-    
+  3. Supporting Packages and Tools
+     | Package                            | Purpose                              | Installation Command                            |
+     | ---------------------------------- | ------------------------------------ | ----------------------------------------------- |
+     | **python3-pip**                    | Python package manager               | `sudo apt install python3-pip`                  |
+     | **pyautogui**                      | Mouse and keyboard control           | `pip install pyautogui`                         |
+     | **psutil**                         | To get RAM/CPU usage data            | `pip install psutil`                            |
+     | **brightnessctl**                  | Adjust screen brightness             | `sudo apt install brightnessctl`                |
+     | **pavucontrol / pulseaudio-utils** | Audio management backend             | `sudo apt install pavucontrol pulseaudio-utils` |
+     | **udev rules (optional)**          | Allow non-root serial access         | `/etc/udev/rules.d/99-arduino.rules` setup      |
+     
+
