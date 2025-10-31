@@ -9,4 +9,4 @@ It allows you to:
 - 💡 Adjust **screen brightness** that too via potentiometer
 - 🖱️ Move your **mouse pointer** and click using a joystick  
 - 🌡️ View **CPU temperature** and **RAM usage** represented by LEDs and servo motor **in real time**.
-- 
+  
