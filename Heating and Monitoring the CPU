@@ -1,0 +1,30 @@
+A. Install Stress Tool
+ # For stress (if your distribution allows it)
+ sudo apt update
+ sudo apt install stress
+
+ # OR, for stress-ng (recommended, because it's more thorough)
+  sudo apt install stress-ng sudo apt update
+
+B. To read the temperature data from your CPU's inbuilt sensors, install and configure the Monitoring Tool lm-sensors.
+  # Set up lm-sensors
+ Install lm-sensors using sudo apt
+
+  # Set up sensors (all default choices require pressing ENTER).
+  sudo sensors-detect
+
+Now, Heat up the CPU:
+  This command pushes the CPU to 100% usage by running concurrent processes equal to the number of CPU cores you have:
+ # Enter the number of logical cores (threads) your CPU has in place of 'N'.
+ # For instance, a CPU with four cores and hyperthreading typically has eight threads.
+ # --cpu N: executes N CPU strains
+ # --timeout 60s: executes for 60 seconds (modify duration as necessary)
+  stress-ng --cpu N --cpu-method matrixprod --timeout 60s
+
+Now for monitoring the temperature metrics:
+ 1. open a new terminal while running the stress tests
+ 2. Use this command : watch -n 2 sensors
+
+Note: As the stress test loads the CPU, the results will clearly demonstrate that the Core or Package temperature (Tdie or Tctl) is increasing.  The temperatures will progressively return to their idle values after the stress test is over.
+
+      You can end the continuous monitoring by pressing Ctrl+C in the watch terminal after you're finished.
