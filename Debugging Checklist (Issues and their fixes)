@@ -1,0 +1,29 @@
+1. The serial monitor's garbage or corrupted serial
+
+ Fix: align the Arduino and Serial Monitor/Python bauds.
+
+ 2. A busy device or resource
+
+ Use /dev/ttyACM0 to end the Arduino Serial Monitor or another program.  To discover the PID, use sudo fuser /dev/ttyACM0. If necessary, use sudo kill <pid>.
+
+ Use sudo systemctl stop ModemManager to stop ModemManager from interfering.
+
+ 3. After inserting the board, there is no /dev/ttyACM0
+
+ Check the USB, try a new port, and try a different USB cord (data-capable).  You might require a driver for the CH340 clone, but Linux normally takes care of it.
+
+ 4. Constant brightness
+
+ To check if it changes, try manually setting brightnessctl to 50%.  Otherwise, the system might employ Wayland or GPU-managed limitations.  The sysfs fallback method or permission configuration should be used.
+
+ 5. Lag of the mouse
+
+ Reduce Python sleep time (time.sleep(0.01) is appropriate), increase baud (115200), and adjust deadzone and sensitivity.
+
+ 6. The servo is not moving.
+
+ Verify that Python transmits RAM: messages.  In Python, include the debug prints print("RX:", raw) and print("Sent:", send_msg).
+
+ 7. Random servo/LED state movements
+
+ Make sure that any stray Serial.println that prints other text has been eliminated.  One line per cycle is the standard format for all Arduino-to-PC printing.  Only lines that begin with RAM: are read by Arduino.
