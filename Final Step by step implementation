@@ -1,0 +1,40 @@
+Step1: Upload the arduino code to the UNO board Using arduino IDE (file is uploaded in this repository)
+step2: close the arduino IDE after uploading the arduino code
+
+step3: this step includes Ubuntu setup — prerequisites (Run these in terminal)
+        # update
+          sudo apt update
+          sudo apt install -y python3 python3-pip python3-venv xdotool playerctl lm-sensors psutil
+
+        # Optional useful tools:
+          sudo apt install -y iotop htop
+
+        # Add your user to dialout so you can access /dev/ttyUSB0 or /dev/ttyACM0
+          sudo usermod -a -G dialout $USER
+        # You might have to log out and in for the group change to apply. 
+
+Step4: Create a folder ~/ARControl and inside create a Python virtualenv and script. (we are creating a project directory and activating the virtual environment)
+       mkdir -p ~/ARControl
+       cd ~/ARControl
+       python3 -m venv .venv
+       source .venv/bin/activate
+       pip install pyserial psutil
+
+Step5: Creating a python bridge to establish communication betweeen Arduino and Ubuntu
+       we will write a python script and save it in the prject directory. (This file too have been uploaded in this repository)
+
+Step6: Check for the warnings hit by your system (linux), if it is recommending any tools or prerequisites, please install it, (follow your command prompt/Terminal)
+
+step7: Run the python file which was created in step5.
+
+step8: Now the system-control-monitoring console have been established
+      You would be able to change the system volume with rotating the knob of 1st potentiometer.
+      You would be able to change the brightness of the system with 2nd pot.
+      You would be able to move the cursor with the help of joystick.
+      You will notice the servo motor is rotating in the real time to show the RAM usage, it would be very accurate, even a single browser tab's activity or inactivity will make the motor rotate. clockwise for increment in usage and anticlock for reduced usage
+      Those 4 leds will glow as per the temperature ranges in which your cpu's current temp in falling.
+
+Step9: Verification:
+       - Temperature Verification (Consider the file I've uploaded in this repo regarding heating and monitoring the cpu temp.
+       - You may also cross check the ram usage pointing accuracy of servo motor with a terminal command or any RAM metric application.
+       - you will notice the sync between joystick and cursor is very smooth.
